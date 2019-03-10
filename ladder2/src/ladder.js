@@ -77,8 +77,15 @@ class Ladder extends React.Component {
                             align="center"
                             justify="start"
                         >
-                            <Heading margin="large">Ping-Pong Ladder</Heading>
-
+                            <Heading margin="medium">
+                                CODE Ping-Pong Ladder
+                            </Heading>
+                            <Box
+                                margin="medium"
+                                height="small"
+                                width="small"
+                                background="url(/batandball.png)"
+                            />
                             <Box>
                                 {this.state.rungs &&
                                     this.state.rungs.map(rung => {

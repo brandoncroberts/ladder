@@ -2,11 +2,10 @@ import React from "React";
 import axios from "./axios";
 
 import Uploader from "./uploader";
-import { Header } from "./header";
 import { Profile2 } from "./profile2";
+import { Route } from "react-router-dom";
 
 import { BrowserRouter } from "react-router-dom";
-import { browserHistory, Router, Route } from "react-router";
 import OtherProfile from "./otherprofile";
 import Friends from "./friends";
 import Online from "./online.js";

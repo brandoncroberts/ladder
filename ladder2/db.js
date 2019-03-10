@@ -273,6 +273,23 @@ module.exports.getLadderUserPicture = () => {
 `);
 };
 
+module.exports.updateLadder = () => {
+    return db.query(`
+    SELECT users_id, company_id, ranking, winner_id, loser_id
+    FROM ladder
+    LEFT JOIN ladder_results
+    ON users.id = ladder.users_id
+    WHERE company_id = 1
+    ORDER BY ranking ASC;
+`);
+};
+
+// SELECT  ladder.users_id, ladder.company_id, ranking, winner_id, loser_id
+// FROM ladder
+// LEFT JOIN ladder_results
+// ON ladder_results.winner_id = ladder.users_id
+// WHERE ladder.company_id = 1
+// ORDER BY ranking ASC;
 // SELECT users_id, company_id, ranking, ladder.first, ladder.last, url
 // FROM ladder
 // LEFT JOIN users
@@ -292,23 +309,23 @@ module.exports.getLadderUserPicture = () => {
 // OR loser_id = 1
 
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (1, 1, 1, 'Roger', 'Federer');
+// VALUES (15, 1, 1, 'Thomas', 'Bachem');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (2, 1, 2, 'Rafael', 'Nadal');
+// VALUES (16, 1, 2, 'Manuel', 'Dolderer');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (3, 1, 3, 'Novak', 'Djokovic');
+// VALUES (17, 1, 3, 'Cayleigh', 'Heitsmith');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (4, 1 , 4, 'Alexander', 'Zverev');
+// VALUES (18, 1 , 4, 'Ina', 'Wagner');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (5, 1, 5, 'John', 'Isner');
+// VALUES (19, 1, 5, 'Luca', 'Hagel');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (6, 1, 6, 'Kevin', 'Anderson');
+// VALUES (20, 1, 6, 'Britta', 'Kiwit');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (7, 1 , 7, 'Marin', 'Cilic');
+// VALUES (21, 1 , 7, 'Ben', 'Irle');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (8, 1, 8, 'Maria', 'Sharapova');
+// VALUES (22, 1, 8, 'Chris', 'Schmidt');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
-// VALUES (9, 1 , 9, 'Serena', 'Williams');
+// VALUES (23, 1 , 9, 'Paula', 'Neuber');
 // INSERT INTO ladder (users_id, company_id, ranking, first, last)
 // VALUES (10, 1, 10, 'Milos', 'Raonic');
 

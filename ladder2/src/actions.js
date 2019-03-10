@@ -61,8 +61,6 @@ export async function receiveChatMessages(data) {
 }
 
 export async function chatMessage(message) {
-    // console.log('actionchatmessage!!!');
-
     return {
         type: "CHAT_MESSAGE",
         chatMessage: message
